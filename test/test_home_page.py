@@ -1,8 +1,4 @@
 import pytest
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.wait import WebDriverWait
 import allure
 
 from pages.home_page import HomePage
@@ -18,7 +14,7 @@ class TestHomePage:
      def test_check_question_and_answer(self, index, question, answer, 
                                         driver, accept_cookie):
     
-          home_page = HomePage(driver, accept_cookie)
+          home_page = HomePage(driver)
           
           home_page.scroll_to_accordion_heading()
           question_text = home_page.get_questions(index)
